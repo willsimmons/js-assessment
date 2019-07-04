@@ -19,13 +19,16 @@
     "jquery": "^1.11.0",
     "mocha": "^2.2.4",
     "sinon": "^1.14.1",
-    "underscore": "1.8.x"
+    "underscore": "1.8.x",
+    "snyk": "^1.189.0"
   },
   "scripts": {
     "start": "node index.js",
     "test": "mocha -R spec 'tests/app'",
     "lint": "eslint --quiet tests/app app",
-    "lint-warn": "eslint tests/app app"
+    "lint-warn": "eslint tests/app app",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "bugs": {
     "url": "https://github.com/rmurphey/js-assessment/issues"
@@ -33,5 +36,6 @@
   "private": true,
   "devDependencies": {
     "eslint": "^2.8.0"
-  }
+  },
+  "snyk": true
 }
